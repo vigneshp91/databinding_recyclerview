@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.vignesh.myapplication.customlist.dummy.DummyContent.DummyItem"/>
+        <variable
+            
+            name="handler"
+            
+            type="com.example.vignesh.myapplication.customlist.MyItemRecyclerViewAdapter.ListCkickHandler"/>
+
+
+    </data>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:onClick="@{(v)->handler.ItemClickHandler(v)}">
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@{viewmodel.content}"
+        android:textAppearance="?attr/textAppearanceListItem" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@{viewmodel.details}"
+        android:textAppearance="?attr/textAppearanceListItem" />
+</LinearLayout></layout>
